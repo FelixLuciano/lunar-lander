@@ -1,0 +1,9 @@
+numpy
+gymnasium
+wheel
+setuptools
+gymnasium[box2d]
+swig
+torch
+tensorflow
+matplotlib
