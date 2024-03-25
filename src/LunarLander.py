@@ -55,5 +55,5 @@ with open('results/lunar_lander_DeepQLearning_rewards.csv', 'a', newline='') as 
         writer.writerow([episode,reward])
         episode+=1
 
-model.save('data/model_cart_pole.keras')
+model.save('data/model_lunar_lander.keras')
 
