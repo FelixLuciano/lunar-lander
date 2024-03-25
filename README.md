@@ -1,5 +1,16 @@
 # Lunar Lander
+## Developers
+</div >
 
+<div align="center" style="max-width:68rem;">
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/gianvr"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/gianvr" width="100px;" alt=""/><br /><sub><b>Giancarlo Ruggiero</b></sub></a><br /><a href="https://github.com/gianvr" title="Giancarlo Vanoni Ruggiero"></a> Developer</td>
+   <td align="center"><a href="https://github.com/talesitf"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/talesitf" width="100px;" alt=""/><br /><sub><b>Tales Ivalque</b></sub></a><br /><a href="https://github.com/talesitf" title="Tales Ivalque"></a>Developer</td>
+   <td align="center"><a href="https://github.com/FelixLuciano"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/FelixLuciano" width="100px;" alt=""/><br /><sub><b>Luciano Felix</b></sub></a><br /><a href="https://github.com/FelixLuciano" title="Luciano Felix"></a> Developer</td>
+  </tr>
+</table>
+</div>
 ## Problema
 
 Este é um ambiente do clássico problema de otimização de trajetória de foguete.
