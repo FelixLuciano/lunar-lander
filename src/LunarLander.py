@@ -23,15 +23,16 @@ print('Action space: ', env.action_space)
 model = keras.Sequential()
 model.add(keras.layers.Dense(512, activation="relu", input_dim=env.observation_space.shape[0]))
 model.add(keras.layers.Dense(256, activation="relu"))
+model.add(keras.layers.Dense(128, activation="relu"))
 model.add(keras.layers.Dense(env.action_space.n, activation="linear"))
 model.summary()
-model.compile(loss=keras.losses.MeanSquaredError(), optimizer=keras.optimizers.Adam(learning_rate=0.001))
+model.compile(loss=keras.losses.MeanSquaredError(), optimizer=keras.optimizers.Adam(learning_rate=1E-4))
 
-gamma = 0.99 
-epsilon = 5
+gamma = 0.99
+epsilon = 0.9
 epsilon_min = 0.01
 epsilon_dec = 0.99
-episodes = 200
+episodes = 100
 batch_size = 64
 memory = deque(maxlen=10000) #talvez usar uma memoria mais curta
 max_steps = 500
