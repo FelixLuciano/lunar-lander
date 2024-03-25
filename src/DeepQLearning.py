@@ -2,6 +2,7 @@ import numpy as np
 import random
 import gc
 import keras
+from alive_progress import alive_bar
 
 class DeepQLearning:
 
@@ -64,28 +65,28 @@ class DeepQLearning:
 
     def train(self):
         rewards = []
-        for i in range(self.episodes+1):
-            (state,_) = self.env.reset()
-            state = np.reshape(state, (1, self.env.observation_space.shape[0]))
-            score = 0
-            steps = 0
-            done = False
-            while not done:
-                steps += 1
-                action = self.select_action(state)
-                next_state, reward, terminal, truncated, _ = self.env.step(action)
-                if terminal or truncated or (steps>self.max_steps):
-                    done = True          
-                score += reward
-                next_state = np.reshape(next_state, (1, self.env.observation_space.shape[0]))
-                self.experience(state, action, reward, next_state, terminal)
-                state = next_state
-                self.experience_replay()
-                if done:
-                    print(f'Episódio: {i+1}/{self.episodes}. Score: {score}')
-                    break
-            rewards.append(score)
-            gc.collect()
-            keras.backend.clear_session()
+        with alive_bar(self.episodes+1) as bar:
+            for i in range(self.episodes+1):
+                (state,_) = self.env.reset()
+                state = np.reshape(state, (1, self.env.observation_space.shape[0]))
+                score = 0
+                steps = 0
+                done = False
+                while not done:
+                    steps += 1
+                    action = self.select_action(state)
+                    next_state, reward, terminal, truncated, _ = self.env.step(action)
+                    if terminal or truncated or (steps>self.max_steps):
+                        done = True          
+                    score += reward
+                    next_state = np.reshape(next_state, (1, self.env.observation_space.shape[0]))
+                    self.experience(state, action, reward, next_state, terminal)
+                    state = next_state
+                    self.experience_replay()
+                rewards.append(score)
+                gc.collect()
+                keras.backend.clear_session()
+                bar.text(f'score: {score}')
+                bar()
 
         return rewards
