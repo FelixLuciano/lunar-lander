@@ -39,5 +39,5 @@ O estado é um vetor de 8 dimensões:
 
 ## Lunar Lander em um estágio final de aprendizado
 
-![Lunar Lander](img/lunar_lander_final.gif) ![Rolling_mean_500](img/media_movel_500.png)
+![Lunar Lander](img/lunar_lander_final.gif) ![Rolling_mean_500](img/media_movel_500.jpg)
 
