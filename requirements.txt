@@ -1,9 +1,11 @@
-numpy
+alive-progress
 gymnasium
-wheel
-setuptools
 gymnasium[box2d]
-swig
-torch
-tensorflow
+keras
 matplotlib
+numpy
+setuptools
+swig
+tensorflow
+torch
+wheel
